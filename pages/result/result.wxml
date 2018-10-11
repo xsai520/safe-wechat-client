@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="bg-Page">
+  <view class="topic-layout">
+    <view class="icon-box">
+       <view class="wave-left wave"><image src="../../images/wave.png"/></view>
+       <view class="wave-right wave"><image src="../../images/wave.png"/></view>
+       <view class="triangle-middle"><image src="../../images/triangle.png"/></view>
+    </view>
+    <view class="topic-main">
+        <view class="topic-header">
+          <view class="topic-title">
+            <view class="main-title">
+            <text class="main-title-bottom">测评</text>
+            <text class="main-title-top">测评</text>   
+            </view>        
+            <view class="sub-title">
+              <text>结</text>
+              <text>果</text>
+            </view>
+          </view>
+        </view>
+        <view class="topic-content">
+          <view class="topic-score">
+              <view class="topic-score-title">你的试卷的得分为：</view>
+              <view class="topic-score-content">
+                <view class="score-box-top">
+                  <image class="blackTriangle" src="../../images/blackTriangle.png"></image>
+                  <image class="yellowWave" src="../../images/yellowWave.png"></image>
+                  <view>
+                      <text class="score-num">{{score}}</text><text class="score-num-text">分</text>
+                      <image class="redLine" src="../../images/redLine.png"></image>
+                  </view>
+                  <image class="pen-right" src="../../images/penRight.png"></image>
+                </view>
+                <view class="score-box-bottom"></view>
+              </view>
+          </view>
+          <view class="topic-assessment">
+            <view class="topic-assessment-title">
+              <text></text>
+              <view style="width:160rpx">总体评估</view>  
+              <text></text>
+            </view>
+            <view class="topic-assessment-content">{{assessment}}</view>
+            <view class="QRcode">
+              <image src="../../images/QRcode.png" bindlongtap="shareResult"></image>
+              <text>长按保存图片，分享朋友圈</text>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="topic-footer" bindtap="toList">
+      <view class="top-footer">再测一次</view>
+      <view class="bottom-footer"></view>
+    </view>
+  </view>
+</view>

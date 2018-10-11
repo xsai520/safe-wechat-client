@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="bg-Page">
+  <view class="topic-layout">
+    <view class="icon-box">
+       <view class="pen-left pen"><image src="../../images/penLeft.png"/></view>  
+       <view class="pen-right pen"><image src="../../images/penRight.png"/></view> 
+       <view class="wave-left wave"><image src="../../images/wave.png"/></view>
+       <view class="wave-right wave"><image src="../../images/wave.png"/></view>
+       <view class="btn-middle"><image src="../../images/btn.png"/></view>
+       <view class="triangle-middle"><image src="../../images/triangle.png"/></view>
+    </view>
+    <view class="topic-main">
+        <view class="topic-header">
+          <view class="topic-title">安全感测评</view>
+        </view>
+        <view class="topic-content">
+          <view class="topic-introduce">
+            <view class="topic-name">测评介绍</view>
+            <view class="topic-detail">
+            安全感就是渴望稳定、安全的心理需求。
+            是对可能出现的对身体或心理的危险或风险的预感，
+            以及个体在应对处事时的有/无力感，主要表现为确定感和可控感。
+            </view>
+          </view>
+          <view class="topic-explain">
+            <view class="topic-name">测评说明</view>
+            <view class="topic-detail">
+            测评安全感——不安全感的程度进行测评。
+            采用0—4分五级评分，分别为“从不”计4分，“很少”计3分，“有时”计2分，
+            “经常”计1分，“总是”计0分。
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="topic-footer" bindtap="toList">
+      <view class="top-footer">开始测试</view>
+      <view class="bottom-footer"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/list/list",
+    "pages/index/index",
+    "pages/result/result"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "多元测评",
+    "navigationBarTextStyle":"black"
+  }
+}

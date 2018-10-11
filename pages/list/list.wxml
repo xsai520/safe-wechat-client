@@ -1,0 +1,129 @@
+<view class="bg-Page">
+  <view class="topic-layout">
+    <image wx:for="{{imgs}}"  class="btn-img btn-img-{{index}}" wx:key="index" src="../../images/btn.png"/>
+    <view class="topic-main">
+        <view class="topic-header">
+          <view class="topic-title">
+            <text class="topic-title-top">智商测评</text>
+            <text class="topic-title-bottom">智商测评</text>
+          </view>
+          <view class="topic-question-num">
+            <text></text>
+            <view>
+              <text class="answer-question">{{currentQuestion}}</text>
+              <image  class="split-line" src="../../images/split-line.png" />
+              <text class="total-question">{{totalQuestion}}</text>
+            </view>
+            <text></text>
+          </view>
+        </view>
+        <view class="topic-content">
+          <view style="display:none">文字测评</view>
+          <view class="topicList">
+            <view wx:for="{{topicList}}" wx:key="index" wx:if="{{currentIndex==index}}">
+                <view class="text-item topic-text" wx:if="{{item.testType=='TEXT'}}">
+                  <view class="topic-text-problem">
+                    <view class="topic-text-problem-top">{{item.problem}}</view>
+                    <view class="topic-text-problem-bottom"></view>
+                  </view>
+                  <view class="topic-text-options">
+                      <view class="topic-text-option topic-option" data-topic="{{item.topics[index]}}" data-option="{{item}}" data-index="{{index}}" bindtap="selectItem" wx:for="{{item.topics}}" wx:key="index" wx:for-item="option" >
+                        <view>
+                          <view>
+                            <view class="text-option-top topic-option-top {{option.selected?'topic-option-top-active':''}}">
+                              <image src="../../images/blackTriangle.png"></image>
+                              <text class="option">{{option.option}}</text>
+                              <text class="content">{{option.content}}</text>
+                            </view>
+                          </view>
+                          
+                          <view class="text-option-bottom topic-option-bottom">
+                            <text class="option">{{option.option}}</text>
+                            <text class="content">{{option.content}}</text>
+                          </view>
+                        </view>
+                      </view>
+                  </view>
+                  <view wx:if="{{currentIndex!=0}}">
+                    <view class="topic-footer topic-footer-left" >
+                        <view class="top-footer" bindtap="preProblem" data-topics="{{item.topics}}">上一题</view>
+                        <view class="bottom-footer">上一题</view>
+                    </view>
+                    <view class="topic-footer topic-footer-right">
+                        <view class="top-footer" bindtap="nextProblem" data-topics="{{item.topics}}" >
+                          <text wx:if="{{currentQuestion==totalQuestion}}">提交</text>
+                          <text wx:else>下一题</text>
+                        </view>
+                        <view class="bottom-footer" bindtap="nextProblem">
+                          <text wx:if="{{currentQuestion==totalQuestion}}">提交</text>
+                          <text wx:else>下一题</text>
+                        </view>
+                    </view>
+                  </view>
+                  <view wx:else>
+                  <view class="topic-footer"> 
+                        <view class="top-footer" bindtap="nextProblem" data-topics="{{item.topics}}">下一题</view>
+                        <view class="bottom-footer">下一题</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="text-item topic-text" wx:else>  
+                  <view style="display:none">图片测评</view>
+                    <view class="topic-img-problem">
+                      <view class="topic-img-problem-top">
+                        {{item.problem}}
+                        <image src="../../images/cat.png"></image>
+                      </view>
+                      <view class="topic-img-problem-bottom">
+                        {{item.problem}}
+                       <image src="../../images/cat.png"></image>
+                      </view>
+                    </view>
+                    <view class="topic-img-options">
+                      <view style="width:33.33%;height:auto;float:left;padding:30rpx 0"  wx:for="{{item.topics}}" wx:key="idex" wx:for-item="option">
+                        <view class="topic-img-option topic-option" data-option="{{item}}"  data-index="{{index}}" data-topic="{{item.topics[index]}}" bindtap="selectItem">
+                          <view> 
+<view class="img-option-top topic-option-top">
+                            <text class="option {{option.selected?'topic-option-top-active':''}}">{{option.option}}</text>
+                            <image class="content" src="../../images/cat.png"></image>
+                          </view>
+                          <view class="img-option-bottom topic-option-bottom">
+                            <text class="option">{{option.option}}</text>
+                            <view class="content"></view>
+                          </view>
+                          </view>
+                          <view>  
+                          </view>
+                          
+                        </view>
+                      </view>
+                    </view>
+                    <view wx:if="{{currentIndex!=0}}">
+                      <view class="topic-footer topic-footer-left" >
+                        <view class="top-footer" bindtap="preProblem" data-item="{{item}}" data-topics="{{item.topics}}">上一题</view>
+                        <view class="bottom-footer">上一题</view>
+                      </view>
+                      <view class="topic-footer topic-footer-right" >
+                        <view class="top-footer" bindtap="nextProblem" data-topics="{{item.topics}}"> 
+                          <text wx:if="{{currentQuestion==totalQuestion}}">提交</text>
+                          <text wx:else>下一题</text>
+                        </view>
+                        <view class="bottom-footer">
+                          <text wx:if="{{currentQuestion==totalQuestion}}">提交</text>
+                          <text wx:else>下一题</text>
+                        </view>
+                      </view>
+                    </view>
+                    <view wx:else>
+                      <view class="topic-footer">
+                        <view class="top-footer" bindtap="nextProblem" data-topics="{{item.topics}}">下一题</view>
+                        <view class="bottom-footer">下一题</view>
+                      </view>
+                    </view>
+                </view>
+            </view>
+          </view>        
+        </view>
+    </view>
+  </view>
+</view>
